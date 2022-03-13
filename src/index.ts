@@ -14,4 +14,4 @@ app.use(cors());
 app.use(router);
 
 const port = process.env.PORT || 2001;
-app.listen(2001, () => console.log(`Server started on port ${port} 🚀`));
+app.listen(port, () => console.log(`Server started on port ${port} 🚀`));
