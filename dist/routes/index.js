@@ -13,9 +13,9 @@ router.post('/users', _UserController2.default.create);
 router.post('/login', _UserAuthenticated2.default.index);
 router.delete('/delete', _ensureAuthenticated.ensureAuthenticated, _UserController2.default.del);
 
-
 // PenalCodes Routes
 router.get('/penal-codes', _ensureAuthenticated.ensureAuthenticated, _PenalCodeController2.default.list);
+router.get('/penal-codes/:id', _ensureAuthenticated.ensureAuthenticated, _PenalCodeController2.default.getCode);
 router.post('/penal-codes', _ensureAuthenticated.ensureAuthenticated, _PenalCodeController2.default.create);
 router.put('/penal-codes/:id', _ensureAuthenticated.ensureAuthenticated, _PenalCodeController2.default.update);
 router.delete('/penal-codes/:id', _ensureAuthenticated.ensureAuthenticated, _PenalCodeController2.default.delete);

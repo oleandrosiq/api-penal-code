@@ -51,6 +51,22 @@ class PenalCodeController {
     }
   }
 
+  async getCode(request, response) {
+    const { id } = request.params;
+
+    try {
+      const code = await _PenalCodeRepository2.default.findById(id);
+
+      if (!code) {
+        return response.status(404).json({ error: 'PenalCode not found.' });
+      }
+
+      return response.status(200).json(code);
+    } catch (error) {
+      return response.status(400).json({ error: 'Error getting PenalCode.' });
+    }
+  }
+
   async delete(request, response) {
     const { id } = request.params;
 
