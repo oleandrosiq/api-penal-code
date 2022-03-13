@@ -1,15 +1,17 @@
 {
-  "version": 2,
-  "builds": [
+  "env": {
+    "DATABASE_URL": "@mongodb-ur",
+    "APP_SECRET_KEY": "@app-secret-key"
+  },
+  "headers": [
     {
-      "src": "./src/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/*",
-      "dest": "/"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
